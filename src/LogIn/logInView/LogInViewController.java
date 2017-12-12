@@ -16,6 +16,7 @@ import Database.User;
 import Database.Connection;
 import Database.Music;
 import Main.Upload;
+import Mode.Mode;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.scene.control.Button;
@@ -39,6 +40,7 @@ public class LogInViewController  {
     
     List<User> userList = new ArrayList<User>();
     
+    private static Stage mainStage;
     
     public void logIn() throws IOException {
         
@@ -48,12 +50,8 @@ public class LogInViewController  {
             if(user.getText().equals(userList.get(i).getUsername())&&pass.getText().equals(userList.get(i).getPassword()))
             {
                 AllUser.setOnline(userList.get(i).getId());
-                // upload test
-                Upload upload = new Upload();
-                //upload.start();
-                // end test
-                Main main = new Main();
-                Stage mainStage = LogIn.LogIn.getLogInStage();            
+                Mode main = new Mode();
+                mainStage = LogIn.LogIn.getLogInStage();            
                 main.start(mainStage);
             }
         }                  

@@ -1,4 +1,3 @@
-
 package LogIn;
 
 import Chord.AChord;

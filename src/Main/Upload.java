@@ -11,16 +11,25 @@ import javax.persistence.TypedQuery;
 
 public class Upload {
     
+    String song;
+    String speed;
+    String url;
+    String chordprogess;
+    
     Music dummyMusic;
     
     List<User> allUser;
     
-    public void start(){
+    public void start(String songName,String bpm,String link,String chord){
         // --------
-        dummyMusic = new Music("Versace",AllUser.getOnline());
-        dummyMusic.setBpm(132);
-        dummyMusic.setChord("-*-*-*-*C*-*-*-*-*-*Em*-*");
-        dummyMusic.setLink("http://161.246.6.25/songs/Versace.mp3");
+        song = songName;
+        speed = bpm;
+        url = link;
+        chordprogess = chord;
+        dummyMusic = new Music(song,AllUser.getOnline());
+        dummyMusic.setBpm(Integer.parseInt(speed));
+        dummyMusic.setChord(chordprogess);
+        dummyMusic.setLink(url);
         AllUser.getOnline().setMusic(dummyMusic);
         // -------
         addMusic(dummyMusic);

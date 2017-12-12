@@ -32,8 +32,6 @@ public class Main extends Application {
     
     @Override
     public void start(Stage primaryStage) throws IOException {
-        
-        
        this.primaryStage = primaryStage;
        this.primaryStage.setTitle("Guitar Wizard");
        showMainView();
@@ -48,6 +46,7 @@ public class Main extends Application {
         primaryStage.show();
         
     }
+    
     public static void main(String[] args) {
         launch(args);
     }
