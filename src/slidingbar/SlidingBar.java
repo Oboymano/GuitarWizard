@@ -227,7 +227,7 @@ public class SlidingBar {
                     @Override
                     public void handle(ActionEvent event) {
                         if(song.mediaPlayer.getVolume()<=1)
-                            song.mediaPlayer.setVolume(song.mediaPlayer.getVolume()+0.1);
+                            song.increaseVolume();
                         
                     }
                 });
@@ -237,7 +237,7 @@ public class SlidingBar {
                     @Override
                     public void handle(ActionEvent event) {
                         if(song.mediaPlayer.getVolume()>=0)
-                            song.mediaPlayer.setVolume(song.mediaPlayer.getVolume()-0.1);
+                            song.decreaseVolume();
                     }
                 });
                

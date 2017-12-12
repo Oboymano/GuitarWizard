@@ -78,6 +78,18 @@ public class MusicDisplay {
         pause = false;
     }
     
+    public void setVolume(int volume){
+        mediaPlayer.setVolume(volume);
+    }
+    
+    public void increaseVolume(){
+        mediaPlayer.setVolume(mediaPlayer.getVolume()+0.1);
+    }
+    
+    public void decreaseVolume(){
+        mediaPlayer.setVolume(mediaPlayer.getVolume()-0.1);
+    }
+    
     public void pauseMusic(){
         mediaPlayer.pause();
         pause = true;
