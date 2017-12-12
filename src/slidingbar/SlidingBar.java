@@ -46,39 +46,70 @@ public class SlidingBar {
     static double gapBar = 280;
     static double gap = 70;
     static double gapSolo = 35;
-    int count = 0;
-    int time = 0;
-    int target = 0;
-    int barTarget =0;
-    int state = 6;
-    boolean checkSprite = false;
-    boolean checkPause = false;
-    boolean checkMute = false;
-    boolean isGreen = false;
-    boolean endSong = false;
+    int count;
+    int time;
+    int target;
+    int barTarget;
+    int state;
+    boolean checkSprite;
+    boolean checkPause;
+    boolean checkMute;
+    boolean isGreen;
+    boolean endSong;
     
     MusicDisplay song ;
     
-    Pane root = new Pane();
+    Pane root;
     
-    Button up = new Button();
-    Button down = new Button();
+    Button up;
+    Button down;
     
-    Label showTime = new Label();
+    Label showTime;
     
-    AllChord Aguide = new AChord(0);
-    AllChord Bguide = new BChord(0);
-    AllChord Cguide = new CChord(0);
-    AllChord Dguide = new DChord(0);
-    AllChord Eguide = new EChord(0);
-    AllChord Fguide = new FChord(0);
-    AllChord Gguide = new GChord(0);
+    AllChord Aguide;
+    AllChord Bguide;
+    AllChord Cguide;
+    AllChord Dguide;
+    AllChord Eguide;
+    AllChord Fguide;
+    AllChord Gguide;
     
-    Arrow arrow = new Arrow(50,50,1,widthEdge/2-25,heightEdge-heightBar-50);
+    Arrow arrow;
     
-    PauseButton pauseButton = new PauseButton();
+    PauseButton pauseButton;
     
     public void play(Stage primaryStage,String songName) {
+        
+        count = 0;
+        time = 0;
+        target = 0;
+        barTarget =0;
+        state = 6;
+        
+        checkSprite = false;
+        checkPause = false;
+        checkMute = false;
+        isGreen = false;
+        endSong = false;
+        
+        root = new Pane();
+        
+        up = new Button();
+        down = new Button();
+        
+        showTime = new Label();
+        
+        Aguide = new AChord(0);
+        Bguide = new BChord(0);
+        Cguide = new CChord(0);
+        Dguide = new DChord(0);
+        Eguide = new EChord(0);
+        Fguide = new FChord(0);
+        Gguide = new GChord(0);
+                
+        arrow = new Arrow(50,50,1,widthEdge/2-25,heightEdge-heightBar-50);
+        
+        pauseButton = new PauseButton();
         
         song = new MusicDisplay(songName);
         

@@ -35,14 +35,14 @@ public class MusicDisplay {
     
     private String name;
     public int index;
-    public List<Bar> bar = new ArrayList<Bar>();
-    public List<Alphabet> alphabet = new ArrayList<Alphabet>();
-    public List<Number> number = new ArrayList<Number>();
-    public List<Music> musicList = new ArrayList<Music>();
-    List<String> chord = new ArrayList<String>();
+    public List<Bar> bar;
+    public List<Alphabet> alphabet;
+    public List<Number> number;
+    public List<Music> musicList;
+    List<String> chord;
     MediaPlayer mediaPlayer;
     public double normalSpeed;
-    public double defaultSpeed=1.0;
+    public double defaultSpeed;
     public int bpm;
     public int bpmDefualt;
     public double movement;
@@ -50,6 +50,11 @@ public class MusicDisplay {
     
     public MusicDisplay(String name){
         try {
+            bar = new ArrayList<Bar>();
+            alphabet = new ArrayList<Alphabet>();
+            number = new ArrayList<Number>();
+            musicList = new ArrayList<Music>();
+            chord = new ArrayList<String>();
             init(name);
             this.name = name;
             subString(musicList.get(index).getChord());
@@ -58,6 +63,7 @@ public class MusicDisplay {
             movement = (((bpm/2)*widthBar)/60)/60;
             downloadMusic(musicList.get(index).getName(),musicList.get(index).getLink());
             normalSpeed = 1.0;
+            defaultSpeed = 1.0;
             createBlock();
             mediaPlayer = new MediaPlayer(new Media(new File("music/"+name+".mp3").toURI().toString()));
             mediaPlayer.setVolume(0.5);
